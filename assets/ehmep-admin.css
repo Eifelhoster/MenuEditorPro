@@ -1,0 +1,424 @@
+/* Eifelhoster-Menü-Editor Pro – Admin Styles */
+
+/* ---------------------------------------------------------------
+   Modal overlay
+--------------------------------------------------------------- */
+.ehmep-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+}
+
+.ehmep-modal.is-open {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+body.ehmep-modal-open {
+  overflow: hidden;
+}
+
+.ehmep-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .55);
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------------
+   Modal panel
+--------------------------------------------------------------- */
+.ehmep-modal__panel {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, .25);
+  width: 96vw;
+  max-width: 1100px;
+  max-height: 92vh;
+  margin-top: 4vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ---------------------------------------------------------------
+   Modal header
+--------------------------------------------------------------- */
+.ehmep-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: #1d2327;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.ehmep-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ehmep-modal__header h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.ehmep-header-logo img {
+  height: 28px;
+  width: auto;
+  display: block;
+  opacity: .9;
+}
+
+#ehmep-modal-x {
+  color: #fff;
+  border-color: rgba(255,255,255,.4);
+  background: transparent;
+}
+
+#ehmep-modal-x:hover {
+  background: rgba(255,255,255,.1);
+}
+
+/* ---------------------------------------------------------------
+   Modal body
+--------------------------------------------------------------- */
+.ehmep-modal__body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 18px;
+}
+
+/* ---------------------------------------------------------------
+   Two-column grid
+--------------------------------------------------------------- */
+.ehmep-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+@media (max-width: 780px) {
+  .ehmep-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Cards
+--------------------------------------------------------------- */
+.ehmep-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 14px 16px;
+}
+
+.ehmep-card h3 {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #50575e;
+  letter-spacing: .04em;
+}
+
+.ehmep-card hr {
+  margin: 12px 0;
+  border: 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* ---------------------------------------------------------------
+   Row / form fields
+--------------------------------------------------------------- */
+.ehmep-row {
+  margin-bottom: 10px;
+}
+
+.ehmep-row label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.ehmep-row select,
+.ehmep-row input[type="text"],
+.ehmep-row input[type="url"],
+.ehmep-row textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ehmep-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------------
+   Actions bar
+--------------------------------------------------------------- */
+.ehmep-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* ---------------------------------------------------------------
+   Status label
+--------------------------------------------------------------- */
+.ehmep-status {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.ehmep-status--ok    { color: #2e7d32; }
+.ehmep-status--error { color: #c62828; font-weight: 600; }
+
+/* ---------------------------------------------------------------
+   Modal footer
+--------------------------------------------------------------- */
+.ehmep-modal__footer {
+  padding: 8px 18px;
+  background: #f6f7f7;
+  border-top: 1px solid #e0e0e0;
+  text-align: right;
+  color: #777;
+  flex-shrink: 0;
+}
+
+/* ---------------------------------------------------------------
+   Menu tree (outer list)
+--------------------------------------------------------------- */
+#ehmep-menu-tree-wrap {
+  max-height: 480px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background: #fff;
+  padding: 6px 4px;
+}
+
+.ehmep-menu-tree,
+.ehmep-children {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ehmep-children {
+  padding-left: 24px;
+  border-left: 2px solid #e0e0e0;
+  margin-top: 3px;
+  margin-left: 10px;
+}
+
+/* ---------------------------------------------------------------
+   Menu item row
+--------------------------------------------------------------- */
+.ehmep-item {
+  margin: 3px 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  background: #fff;
+  transition: box-shadow .15s;
+}
+
+.ehmep-item:hover {
+  box-shadow: 0 1px 4px rgba(0,0,0,.08);
+}
+
+.ehmep-item.is-orphan {
+  border-color: #e0a800;
+  background: #fffbee;
+}
+
+/* ---------------------------------------------------------------
+   Item header (always visible)
+--------------------------------------------------------------- */
+.ehmep-item-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  min-height: 36px;
+}
+
+.ehmep-drag-handle {
+  cursor: grab;
+  color: #aaa;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.ehmep-drag-handle:active {
+  cursor: grabbing;
+}
+
+.ehmep-toggle {
+  cursor: pointer;
+  color: #555;
+  font-size: 11px;
+  flex-shrink: 0;
+  display: inline-block;
+  width: 14px;
+  transition: transform .15s;
+  user-select: none;
+}
+
+.ehmep-toggle.is-open {
+  transform: rotate(90deg);
+}
+
+.ehmep-item-type-badge {
+  font-size: 10px;
+  background: #e8eaf6;
+  color: #3949ab;
+  border-radius: 3px;
+  padding: 1px 5px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.ehmep-item.is-orphan .ehmep-item-type-badge {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.ehmep-item-title {
+  flex: 1 1 auto;
+  font-size: 13px;
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 2px 4px;
+  border-radius: 2px;
+  min-width: 0;
+}
+
+.ehmep-item-title:focus {
+  border-color: #2271b1;
+  background: #fff;
+  outline: none;
+}
+
+.ehmep-orphan-warning {
+  font-size: 11px;
+  color: #b45309;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ehmep-delete-item {
+  flex-shrink: 0;
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #a00;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0 6px;
+  height: 24px;
+}
+
+.ehmep-delete-item:hover {
+  background: #fce;
+  border-color: #a00;
+}
+
+/* ---------------------------------------------------------------
+   Item details (collapsible)
+--------------------------------------------------------------- */
+.ehmep-item-details {
+  display: none;
+  padding: 8px 10px 10px 38px;
+  border-top: 1px solid #f0f0f0;
+  background: #fafafa;
+}
+
+.ehmep-item-field {
+  margin-bottom: 8px;
+}
+
+.ehmep-item-field label {
+  display: block;
+  font-size: 11px;
+  color: #555;
+  margin-bottom: 3px;
+}
+
+.ehmep-item-field input[type="text"],
+.ehmep-item-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
+.ehmep-item-field input[readonly] {
+  background: #f5f5f5;
+  color: #777;
+}
+
+/* ---------------------------------------------------------------
+   Roles section
+--------------------------------------------------------------- */
+.ehmep-item-roles {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.ehmep-roles-label {
+  display: block;
+  font-size: 11px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.ehmep-item-roles .ehmep-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  margin-right: 10px;
+  margin-bottom: 4px;
+}
+
+/* ---------------------------------------------------------------
+   Drag-and-drop placeholder
+--------------------------------------------------------------- */
+.ehmep-sortable-placeholder {
+  height: 32px;
+  border: 2px dashed #2271b1;
+  border-radius: 3px;
+  background: #f0f6ff;
+  margin: 3px 0;
+  list-style: none;
+}
+
+/* ---------------------------------------------------------------
+   Nav-menus.php orphan markers (ehmep-navmenus.js)
+--------------------------------------------------------------- */
+.ehmep-orphaned-item .item-title {
+  color: #b45309;
+}
+
+.ehmep-orphan-notice {
+  color: #c00;
+  font-size: 11px;
+  display: block;
+}
